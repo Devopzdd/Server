@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin_style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+{% extends 'base.html' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+  {% include 'admin_navbar.html' %}
+  <h1>Admin Panel</h1>
+
+  <h2>Add User</h2>
+  <form method="post" action="/admin/add_user">
+    <label for="new_username">New Username:</label>
+    <input type="text" id="new_username" name="new_username" required><br>
+    <label for="new_password">New Password:</label>
+    <input type="password" id="new_password" name="new_password" required><br>
+    <input type="submit" value="Add User">
+  </form>
+
+  <h2>Remove Upload</h2>
+  <form method="post" action="/admin/remove_upload">
+    <label for="filename">Filename:</label>
+    <input type="text" id="filename" name="filename" required><br>
+    <input type="submit" value="Remove Upload">
+  </form>
+
+  <h2>Remove User</h2>
+  <form method="post" action="/admin/remove_user">
+    <label for="remove_username">Username:</label>
+    <input type="text" id="remove_username" name="remove_username" required><br>
+    <input type="submit" value="Remove User">
+  </form>
+{% endblock %}
+
+    </form>
+  </body>
+</html>

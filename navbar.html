@@ -1,0 +1,10 @@
+<nav>
+  {% if session['username'] == 'admin' %}
+    <a href="/admin">Admin Panel</a>
+    <a href="/admin/uploaded_list">Uploaded List</a>
+    <a href="/admin/users_logged_in">Users Logged In</a>
+  {% endif %}
+  <a href="/files">Uploaded Files</a>
+  <a href="/upload">Upload</a>
+  <a href="/logout">Logout</a>
+</nav>
